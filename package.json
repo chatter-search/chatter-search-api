@@ -4,11 +4,15 @@
   "description": "Twitter API exploration",
   "main": "index.js",
   "scripts": {
+    "start": "nf start web",
+    "start-debug": "nf start web-debug",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "foreman": "^1.4.1",
+    "request-json": "^0.5.5"
   }
 }
