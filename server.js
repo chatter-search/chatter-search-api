@@ -1,7 +1,10 @@
 "use strict";
 
-var express = require('express');
+var express = require("express");
+var cors = require("cors");
 var app = express();
+app.use(cors());
+
 var oauth = require("./lib/oauth");
 var userTimelineApi = require("./lib/user-timeline");
 var userShowApi = require("./lib/user-show");
@@ -19,13 +22,13 @@ app.get('/:version/user-timeline', function (req, res) {
  			});
  		}
  	).then(
- 		function(json) {
+ 		function(data) {
 
- 			res.send(json);
+ 			res.json(data);
  		},
  		function error(err) {
 
-			res.send({
+			res.json({
 				"error": err
 			});
 		}
@@ -44,13 +47,13 @@ app.get('/:version/user-show', function (req, res) {
  			});
  		}
  	).then(
- 		function(json) {
+ 		function(data) {
 
- 			res.send(json);
+ 			res.json(data);
  		},
  		function error(err) {
 
-			res.send({
+			res.json({
 				"errors": [
 					err
 				]
