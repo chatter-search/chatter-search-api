@@ -7,8 +7,12 @@
     "start": "nf start web",
     "start-debug": "nf start web-debug"
   },
-  "author": "Dmitrii Lapshukov <lapshukov@gmail.com>",
+  "author": "Dmitrii Lapshukov<lapshukov@gmail.com>",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://dmi3y@bitbucket.org/chattersearch/chatter-search-api.git"
+  },
   "dependencies": {
     "cors": "^2.7.1",
     "express": "^4.13.4",
