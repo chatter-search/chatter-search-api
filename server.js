@@ -9,7 +9,7 @@ var oauth = require("./lib/oauth");
 var userTimelineApi = require("./lib/user-timeline");
 var userShowApi = require("./lib/user-show");
 
-app.get('/:version/user-timeline', function (req, res) {
+app.get('/:version/user_timeline', function (req, res) {
 	var oauthPromise = oauth();
 	var version = req.params.version;
  	oauthPromise.then(
@@ -35,7 +35,7 @@ app.get('/:version/user-timeline', function (req, res) {
  	);
 });
 
-app.get('/:version/user-show', function (req, res) {
+app.get('/:version/user_show', function (req, res) {
 	var oauthPromise = oauth();
 	var version = req.params.version;
  	oauthPromise.then(
