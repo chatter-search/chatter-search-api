@@ -1,14 +1,13 @@
 {
-  "name": "chatter-search",
+  "name": "chatter-search-api",
   "version": "1.0.0",
   "description": "Twitter API exploration",
   "main": "index.js",
   "scripts": {
     "start": "nf start web",
-    "start-debug": "nf start web-debug",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-debug": "nf start web-debug"
   },
-  "author": "",
+  "author": "Dmitrii Lapshukov <lapshukov@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.7.1",
