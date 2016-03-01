@@ -2,6 +2,8 @@
 
 > Pocking around Twitter's API
 
+Hosted example at [Heroku](https://api-chatter-search.herokuapp.com/).
+
 ### Version 1.0.0
 
 
