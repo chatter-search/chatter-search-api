@@ -14,9 +14,14 @@ The `screen_name` is now required to all. The error with 400 status is what will
 		}
 
 
-1. Same as 1.0.0. Except it will return error when no 'screen_name' provided.
+1. GET `/1.1.0/user_show?screen_name=twitterapi`
 
-2. Added `retweet_count` property.
+	Same as 1.0.0. Except it will return error when no 'screen_name' provided.
+
+
+2.   GET `/1.0.0/user_timeline?screen_name=twitterapi`
+
+	Added `retweet_count` property. And error.
 
 ### Version 1.0.0
 
@@ -37,6 +42,7 @@ The `screen_name` is now required to all. The error with 400 status is what will
 		  "profile_image_url": "http://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_normal.png",
 		  "profile_image_url_https": "https://pbs.twimg.com/profile_images/2284174872/7df3h38zabcvjylnyfe3_normal.png"
 		}
+
 
 
 2.  GET `/1.0.0/user_timeline?screen_name=twitterapi`
