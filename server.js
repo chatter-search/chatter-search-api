@@ -9,6 +9,14 @@ var oauth = require("./lib/oauth");
 var userTimelineApi = require("./lib/user-timeline");
 var userShowApi = require("./lib/user-show");
 
+function errorHandler(res) {
+
+	return function(err, code) {
+		res.status(code || 400);
+		res.json(err);
+	};
+}
+
 app.get('/:version/user_timeline', function (req, res) {
 	var oauthPromise = oauth();
 	var version = req.params.version;
@@ -26,12 +34,7 @@ app.get('/:version/user_timeline', function (req, res) {
 
  			res.json(data);
  		},
- 		function error(err) {
-
-			res.json({
-				"error": err
-			});
-		}
+ 		errorHandler(res)
  	);
 });
 
@@ -51,14 +54,7 @@ app.get('/:version/user_show', function (req, res) {
 
  			res.json(data);
  		},
- 		function error(err) {
-
-			res.json({
-				"errors": [
-					err
-				]
-			});
-		}
+ 		errorHandler(res)
  	);
 });
 
