@@ -14,11 +14,11 @@
     "url": "https://dmi3y@bitbucket.org/chattersearch/chatter-search-api.git"
   },
   "dependencies": {
-    "cors": "^2.7.1",
-    "express": "^4.13.4",
-    "foreman": "^1.4.1",
-    "lodash": "^4.5.1",
-    "oauth": "^0.9.14",
-    "request-json": "^0.5.5"
+    "cors": "2.7.1",
+    "express": "4.13.4",
+    "foreman": "1.4.1",
+    "lodash": "4.5.1",
+    "oauth": "0.9.14",
+    "request-json": "0.5.5"
   }
 }
