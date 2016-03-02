@@ -1,13 +1,27 @@
-## Chatter search API
+# Chatter search API
 
 > Pocking around Twitter's API
 
 Hosted example at [Heroku](https://chatter-search-api.herokuapp.com/).
 
+### Version 1.1.0
+
+The `screen_name` is now required to all. The error with 400 status is what will be returned back in this case. 
+
+    	
+		{
+			"error": "Missed required parameter 'screen_name'."
+		}
+
+
+1. Same as 1.0.0. Except it will return error when no 'screen_name' provided.
+
+2. Added `retweet_count` property.
+
 ### Version 1.0.0
 
 
-1.  `/1.0.0/user_show?screen_name=twitterapi`
+1.  GET `/1.0.0/user_show?screen_name=twitterapi`
 	
 	Leveraging Twitter's [/1.1/statuses/user_timeline.json](https://dev.twitter.com/rest/reference/get/statuses/user_timeline) API entry.
 	Lookup user details for provided `screen_name`.
@@ -25,7 +39,7 @@ Hosted example at [Heroku](https://chatter-search-api.herokuapp.com/).
 		}
 
 
-2.  `/1.0.0/user_timeline?screen_name=twitterapi`
+2.  GET `/1.0.0/user_timeline?screen_name=twitterapi`
 
 	Leveraging Twitter's [/1.1/users/show.json](https://dev.twitter.com/rest/reference/get/users/show) API entry.
 	Lookup for user tweets associated with `screen_name`.
