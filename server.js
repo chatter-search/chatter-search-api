@@ -5,9 +5,9 @@ var cors = require("cors");
 var app = express();
 app.use(cors());
 
-var oauth = require("./lib/oauth");
-var userTimelineApi = require("./lib/user-timeline");
-var userShowApi = require("./lib/user-show");
+var oauth = require("./src/oauth");
+var userTimelineApi = require("./src/user-timeline");
+var userShowApi = require("./src/user-show");
 
 function errorHandler(res) {
 
