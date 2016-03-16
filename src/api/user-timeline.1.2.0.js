@@ -30,15 +30,23 @@ module.exports = function (conf) {
             // + if there is no user tweets it returns
             // + {"request":"/1.1/statuses/user_timeline.json","error":"Not authorized."}
             // + when you expect just empty array...
+            //
+            // Turns out to be my misunderstanding.
+            // Better error handling is needed.
             resolve([])
           } else {
             // otherwise parse response...
             resolve(_.map(body, function (el) {
               var info = _.pick(el, [
-                'created_at',
+                'created_at', // @depricated in favor of created_at_timestamp
+                //            + will be removed in v2.0.0
                 'text',
                 'retweet_count'
               ])
+
+              // These are the changes for 1.2.0
+              info.created_at_timestamp = new Date(el.created_at).getTime()
+              info.text_length = el.text.length
 
               // it seems like another way to determine retweeted
               // + entry is parse text for "RT @...:"

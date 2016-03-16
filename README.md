@@ -4,11 +4,32 @@
 
 Hosted on [Heroku](https://chatter-search-api.herokuapp.com/).
 
+### Version 1.2.0
+
+The `screen_name` is now required to all. The error with 400 status is what will be returned back in this case.
+
+
+		{
+			"error": "Missed required parameter 'screen_name'."
+		}
+
+
+1. GET `/1.2.0/user_show?screen_name=twitterapi`
+
+	Mirrow for 1.1.0, meaning it is exact same.
+
+
+2. GET `/1.2.0/user_timeline?screen_name=twitterapi`
+
+	Added `created_at_timestamp` and `text_length` properties, which are created time UNIX timestamp and tweet length.
+
+	Property `created_at` now depricated in favor of timestamp, meaning `created_at` will be removed in future releases (planned for 2.0.0).
+
 ### Version 1.1.0
 
-The `screen_name` is now required to all. The error with 400 status is what will be returned back in this case. 
+The `screen_name` is now required to all. The error with 400 status is what will be returned back in this case.
 
-    	
+
 		{
 			"error": "Missed required parameter 'screen_name'."
 		}
@@ -19,15 +40,15 @@ The `screen_name` is now required to all. The error with 400 status is what will
 	Same as 1.0.0. Except it will return error when no 'screen_name' provided.
 
 
-2.   GET `/1.0.0/user_timeline?screen_name=twitterapi`
+2. GET `/1.1.0/user_timeline?screen_name=twitterapi`
 
 	Added `retweet_count` property. And error.
 
 ### Version 1.0.0
 
 
-1.  GET `/1.0.0/user_show?screen_name=twitterapi`
-	
+1. GET `/1.0.0/user_show?screen_name=twitterapi`
+
 	Leveraging Twitter's [/1.1/statuses/user_timeline.json](https://dev.twitter.com/rest/reference/get/statuses/user_timeline) API entry.
 	Lookup user details for provided `screen_name`.
 	Return hash object with basic information picked up from Twitter's response.
@@ -45,7 +66,7 @@ The `screen_name` is now required to all. The error with 400 status is what will
 
 
 
-2.  GET `/1.0.0/user_timeline?screen_name=twitterapi`
+2. GET `/1.0.0/user_timeline?screen_name=twitterapi`
 
 	Leveraging Twitter's [/1.1/users/show.json](https://dev.twitter.com/rest/reference/get/users/show) API entry.
 	Lookup for user tweets associated with `screen_name`.
