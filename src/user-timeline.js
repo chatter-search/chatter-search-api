@@ -1,19 +1,19 @@
-"use strict";
+'use strict'
 
-var userTimelineApi_100 = require("./api/user-timeline.1.0.0");
-var userTimelineApi_110 = require("./api/user-timeline.1.1.0");
+var timelineApi = {
+  '1.0.0': require('./api/user-timeline.1.0.0'),
+  '1.1.0': require('./api/user-timeline.1.1.0'),
+  '1.2.0': require('./api/user-timeline.1.2.0')
+}
 
-module.exports = function(conf) {
-	var version = conf.version;
+module.exports = function (conf) {
+  var version = conf.version
 
-	switch ( version ) {
-		case "1.0.0":
-			return userTimelineApi_100(conf);
-		case "1.1.0":
-			return userTimelineApi_110(conf);
-		default:
-			return new Promise(function(rs, rj) {
-				rj("No such api version.");
-			});
-	}
-};
+  if (timelineApi.hasOwnProperty(version)) {
+    return timelineApi[version](conf)
+  }
+
+  return new Promise(function (resolve, reject) {
+    reject('No such api version.')
+  })
+}
