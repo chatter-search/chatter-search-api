@@ -6,14 +6,6 @@ Hosted on [Heroku](https://chatter-search-api.herokuapp.com/).
 
 ### Version 1.2.0
 
-The `screen_name` is now required to all. The error with 400 status is what will be returned back in this case.
-
-
-		{
-			"error": "Missed required parameter 'screen_name'."
-		}
-
-
 1. GET `/1.2.0/user_show?screen_name=twitterapi`
 
 	Mirrow for 1.1.0, meaning it is exact same.
